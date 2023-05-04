@@ -90,7 +90,6 @@
 		<view class="dispatch">
 			<u-modal :show="show" :showCancelButton="false" :showConfirmButton='false' width='335px'>
 				<view class="slot-content">
-
 					<view class="title">
 						订单来自：<text>{{fleetName}}</text>
 						<view class="tag">实时</view>
@@ -119,12 +118,22 @@
 						<button @click="getOrder" class="get">立即接单</button>
 					</view>
 				</view>
-
-
 			</u-modal>
-
 		</view>
 
+
+		<u-popup :show="openShow" @close="openShow=false" mode="center" round='20'>
+			<view class="refuse_box">
+				<view  style="height: 84rpx;"></view>
+				<image src="../../static/login/vx.png" mode="aspectFill" class="refuse_image"></image>
+				<view class="refuse_text">拒单后可能会影响您的行为分</view>
+				<view  style="height: 93rpx;"></view>
+				<view  style="display: flex;">
+					<view class="refuse_button" @click="refuse">仍要拒绝</view>
+					<view class="cancel_button" @click="cancel_two">取消</view>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -135,6 +144,7 @@
 				src: '',
 				current: false,
 				show: false,
+				openShow: false,
 				fleetName: '重庆凯程车队',
 				orderData: [{
 						id: 1,
@@ -167,6 +177,20 @@
 			}
 		},
 		methods: {
+			//仍要拒绝
+			refuse(){
+				this.openShow = false
+			},
+			//取消警告第二次
+			cancel_two(){
+				this.openShow = false
+				this.show = true
+			},
+			//取消警告
+			cancle() {
+				this.openShow = true
+				this.show = false
+			},
 			//切换听单状态
 			changeOrder() {
 				this.current = !this.current
@@ -195,6 +219,46 @@
 </script>
 
 <style lang="scss" scoped>
+	.refuse_box {
+		width: 670rpx;
+		height: 500rpx;
+		text-align: center;
+	}
+
+	.refuse_image {
+		width: 100rpx;
+		height: 100rpx;
+	}
+
+	.refuse_text {
+		margin-top: 60rpx;
+		font-size: 30rpx;
+		color: #666666;
+	}
+
+	.cancel_button {
+		width: 370rpx;
+		height: 90rpx;
+		border-radius: 10rpx;
+		text-align: center;
+		line-height: 90rpx;
+		border: 1rpx solid #00A0E9;
+		color: #fff;
+		margin-left: 20rpx;
+		background-color: #00A0E9;
+	}
+
+	.refuse_button {
+		width: 200rpx;
+		height: 90rpx;
+		border-radius: 10rpx;
+		text-align: center;
+		line-height: 90rpx;
+		border: 1rpx solid #579AA3;
+		color: #579AA3;
+		margin-left: 40rpx;
+	}
+
 	.getOrder {
 		display: flex;
 		flex-direction: column;

@@ -148,7 +148,15 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
-		}]
+		},
+		{
+			"path": "OrderNavigation/OrderNavigation",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}
+		]
 	},
 	{
 		"root": "subPackages/driver",
