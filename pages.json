@@ -1,0 +1,244 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "同城货运",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/getOrder/getOrder",
+			"style": {
+				"navigationBarTitleText": "接单"
+			}
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息"
+			}
+		}, {
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/fleet/fleet",
+			"style": {
+				"navigationBarTitleText": "车队",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/my/carManage/carManage",
+			"style": {
+				"navigationBarTitleText": "车辆管理",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/my/fleetManage/fleetManage",
+			"style": {
+				"navigationBarTitleText": "车队管理",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "subPackages/login",
+		"pages": [{
+			"path": "phoneCode/phoneCode"
+		}]
+	}, {
+		"root": "subPackages/order",
+		"pages": [{
+			"path": "map/map",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "cityList/cityList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "addressBook/addressBook",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "addAddress/addAddress",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "searchMap/searchMap",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "preferences/preferences",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "orderDetail/orderDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "jiesu/jiesu",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}
+		    ,{
+                    "path" : "querenOrder/querenOrder",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "querenTwo/querenTwo",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+	},
+	{
+		"root": "subPackages/fleet",
+		"pages":[ {
+			"path": "fleetDetails/fleetDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}]
+	},
+	{
+		"root": "subPackages/driver",
+		"pages":[ {
+			"path": "franchise/franchise",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "confirm/confirm",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "selectCarType/selectCarType",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "fleetDetail/fleetDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "serviceReminder/serviceReminder",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "canceled/canceled",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "CarSpecs/CarSpecs",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}
+		]
+	}],
+	"tabBar": {
+		"color": "#707070",
+		"selectedColor": "#1684FC",
+		"fontSize": "10",
+		"borderStyle": "black", //可选值 black/white
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+				"pagePath": "pages/getOrder/getOrder",
+				"iconPath": "/static/tabBar/jiedan.png",
+				"selectedIconPath": "/static/tabBar/jiedan1.png",
+				"text": "接单"
+			},
+			{
+				"pagePath": "pages/fleet/fleet",
+				"iconPath": "/static/tabBar/chedui.png",
+				"selectedIconPath": "/static/tabBar/chedui1.png",
+				"text": "车队"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"iconPath": "/static/tabBar/xinxi.png",
+				"selectedIconPath": "/static/tabBar/xinxi1.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"iconPath": "/static/tabBar/my.png",
+				"selectedIconPath": "/static/tabBar/my1.png",
+				"text": "我的"
+			}
+		]
+	},
+	"globalStyle": {
+		//导航栏标题颜色及状态栏前景颜色
+		"navigationBarTextStyle": "black",
+		// 导航栏标题文字内容
+		"navigationBarTitleText": "同城货运",
+		//导航栏背景颜色（同状态栏背景色）
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"app-plus": {
+			// 页面回弹效果，设置为 "none" 时关闭效果。
+			"bounce": "none", // 将回弹属性关掉// 这个可以关闭 滚动的效果
+			"softinputMode": "adjustResize" //软键盘弹出模式 adjustResize、adjustPan // (adjustResize) 键盘弹起时，不自动上推页面 
+		},
+		"navigationStyle": "custom", //导航栏样式，仅支持 default/custom。custom即取消默认的原生导航栏
+		//下拉显示出来的窗口的背景色
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"easycom": {
+		"autoscan": true,
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

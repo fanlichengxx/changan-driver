@@ -1,0 +1,44 @@
+{
+  "id": "4045816",
+  "name": "凯辰货运",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9509974",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "2418284",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "1302",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "964425",
+      "name": "勾",
+      "font_class": "gougou",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "15852687",
+      "name": "箭头 左 小",
+      "font_class": "jiantou2",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

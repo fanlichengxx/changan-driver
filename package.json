@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@escook/request-miniprogram": "^0.2.1",
+    "tim-profanity-filter-plugin": "^0.9.0",
+    "tim-upload-plugin": "^1.1.0",
+    "tim-wx-sdk": "^2.26.6",
+    "uview-ui": "^2.0.31"
+  },
+  "devDependencies": {
+    "sass-loader": "^10.4.1"
+  }
+}
