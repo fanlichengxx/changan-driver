@@ -1,6 +1,6 @@
 <template>
 
-	<view class="message paddTopheder">
+	<view class="message paddTopheder" >
 
 		<Header title="消息中心" name="" rightIcon="全部已读" @rightClick="rightClick" />
 		<view class="cell">
@@ -14,7 +14,8 @@
 				 :border='false'
 				 label='订单退款成功'
 				 :labelStyle="{color:'#999999',fontSize:'26upx'}"
-				 isLink>
+				 :clickable='false'
+				 isLink @click="jump(0)">
 				</u-cell>
 				<u-cell icon='../../static/tabBar/youhui1.png'  title="优惠活动"
 				:titleStyle="{color:'#202020',fontSize:'32upx',marginTop:'20upx',fontWeight:'900'}"
@@ -25,7 +26,7 @@
 				 :border='false'
 				 label='暂无消息'
 				:labelStyle="{color:'#999999',fontSize:'26upx'}"
-				 isLink>
+				 isLink >
 				</u-cell>
 				<u-cell icon='../../static/tabBar/kefu1.png'  title="在线客服"
 				 :titleStyle="{color:'#202020',fontSize:'32upx',marginTop:'20upx',fontWeight:'900'}"
@@ -54,6 +55,17 @@
 		},
 		methods: {
 			rightClick() {},
+			jump(e){
+				let url = ''
+				switch(e){
+					case 0:
+					url='/pages/message/serviceReminder/serviceReminder';
+					break;
+				}
+				uni.navigateTo({
+					url
+				})
+			},
 		},
 		created() {
 

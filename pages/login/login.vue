@@ -131,7 +131,7 @@
 			Header
 		},
 		mounted() {
-			console.log(this.$store.users.state.cont,'aaa')
+			// console.log(this.$store.users.state.cont,'aaa')
 		}
 	}
 </script>

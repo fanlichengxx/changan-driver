@@ -6,7 +6,7 @@
 			height="88rpx">
 		</u-navbar>
 		<view class="main">
-			<view class="messageBox" v-for="item in data" :key="item.mid">
+			<view class="messageBox" v-for="item in data" :key="item.mid" @click="jump(item.mid)">
 				<view class="dateTime">
 					{{item.dateTime}}
 				</view>
@@ -48,7 +48,17 @@
 			}
 		},
 		methods: {
-
+jump(e){
+	let url = ''
+	switch(e){
+		case 0:
+		url='/subPackages/map/canceled/canceled';
+		break;
+	}
+	uni.navigateTo({
+		url
+	})
+},
 		}
 	}
 </script>

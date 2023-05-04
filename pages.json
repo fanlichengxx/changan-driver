@@ -40,6 +40,13 @@
 				"navigationBarTitleText": "车队管理",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/message/serviceReminder/serviceReminder",
+			"style": {
+				"navigationBarTitleText": "服务提醒",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"subPackages": [{
@@ -134,6 +141,16 @@
 		}]
 	},
 	{
+		"root": "subPackages/map",
+		"pages":[ {
+			"path": "canceled/canceled",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}]
+	},
+	{
 		"root": "subPackages/driver",
 		"pages":[ {
 			"path": "franchise/franchise",
@@ -155,18 +172,6 @@
 			}
 		},{
 			"path": "fleetDetail/fleetDetail",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},{
-			"path": "serviceReminder/serviceReminder",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},{
-			"path": "canceled/canceled",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
