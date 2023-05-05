@@ -4,20 +4,19 @@
 		<Header title="确认账单" />
 		<view class="" style="height: 50rpx;"></view>
 		<view class="blue_box">
-			<image src="../../../static/login/vx.png" mode="aspectFill"></image>
+			<image src="@/static/order/jingao.png" mode="aspectFill">
 			<view>
 				路费会根据供需情况、实时路况、天气情况等因素综合得出；若产生过路费、停车费、搬运费、小费，请用户额外支付。</view>
 		</view>
 		<view class="unload_box">
 			<view class="unload_box_title">装卸货等候费(有偿等候0分钟)</view>
-			<view class="" style="font-size: 30rpx;font-weight: 600;">0.00元</view>
+			<view class="unload_title">0.00元</view>
 		</view>
-		<view class="" style="border-bottom: #EEEEEE 1rpx solid;width: 710rpx;margin-left: 20rpx;margin-top: 40rpx;">
+		<view class="unload_line">
 		</view>
-		<view class=""
-			style="display: flex;justify-content:space-between;align-items: center;padding: 20rpx;margin-top: 20rpx;">
-			<view class="" style="font-size: 30rpx;font-weight: 600;">费用合计</view>
-			<view class="" style="font-size: 40rpx;font-weight: 600;color: #019FE8;">95.5元</view>
+		<view class="unload_felx">
+			<view class="unload_title">费用合计</view>
+			<view class="unload_qian">95.5元</view>
 		</view>
 		<view class="" style="height: 600rpx;"></view>
 		<view class="xiaanniu">订单完成</view>
@@ -50,6 +49,32 @@
 </script>
 
 <style lang="scss" scoped>
+	.unload_qian {
+		font-size: 40rpx;
+		font-weight: 600;
+		color: #019FE8;
+	}
+
+	.unload_title {
+		font-size: 30rpx;
+		font-weight: 600;
+	}
+
+	.unload_felx {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20rpx;
+		margin-top: 20rpx;
+	}
+
+	.unload_line {
+		border-bottom: #EEEEEE 1rpx solid;
+		width: 710rpx;
+		margin-left: 20rpx;
+		margin-top: 40rpx;
+	}
+
 	.unload_box_title {
 		font-size: 26rpx;
 		color: #666666;

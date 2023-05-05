@@ -8,7 +8,7 @@
 			<view class="one_box_top">
 				<view class="one_box_top_tlte">
 					<view class="one_box_top_wen">
-						<image src="../../../static/login/vx.png" mode="aspectFill">
+						<image src="@/static/order/jingao.png" mode="aspectFill">
 						</image>
 						<view class="one_box_top_count">
 							路费会根据供需情况、实时路况、天气情况等因素综合得出；若产生过路费、停车费、搬运费、小费，请用户额外支付。</view>

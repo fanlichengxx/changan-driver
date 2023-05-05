@@ -50,7 +50,7 @@
 								<!-- 选中激活样式 右上角勾 -->
 								<view class="activeGou"
 									v-show="(item.tag[mixData[k].singleTag].subTag_Arr).includes(subIndex)">
-									<u-icon class="iconGou" name="checkmark" color="#fff" size="8"></u-icon>
+									<image src="@/static/order/tag.png" mode="aspectFill" class="image"></image>
 								</view>
 							</view>
 						</view>
@@ -403,19 +403,15 @@
 
 						//触发样式 右上角勾
 						.activeGou {
-							width: 60rpx;
-							height: 60rpx;
+							width: 35rpx;
+							height: 35rpx;
 							position: absolute;
-							right: -30rpx;
-							top: -30rpx;
-							background-color: #579AA3;
-							border-radius: 50%;
+							right: -4%;
+							top: -23%;
 
-							>.iconGou {
-								position: absolute;
-								left: calc(25% + 5rpx);
-								top: 75%;
-								transform: translate(-50%, -50%);
+							 .image {
+								width: 100%;
+								height: 100%;
 							}
 						}
 
