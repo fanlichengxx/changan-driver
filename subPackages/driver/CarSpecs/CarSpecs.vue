@@ -359,19 +359,12 @@
 					height: 30rpx;
 					width: 30rpx;
 					transform: translateX(-50%) rotate(45deg);
-
-
-
 				}
 
 				>.sub_selectTag {
 					display: flex;
 					flex-wrap: wrap;
 					padding: 36rpx 0rpx 26rpx 20rpx;
-
-
-
-
 					>.subTag {
 						width: 145rpx;
 						height: 70rpx;

@@ -45,12 +45,12 @@
 				</view>
 			</view> -->
 			<view class="" style="height: 200rpx;"></view>
-				<view class="circleBox">
-				    <view class="circle"  @click.stop="changeOrder">请打开听单按钮</view>
-				    <view class="circle1"></view>
-				    <view class="circle2"></view>
-				</view>
-		<view class="" style="height: 120rpx;"></view>
+			<view class="circleBox">
+				<view class="circle" @click.stop="changeOrder">请打开听单按钮</view>
+				<view class="circle1"></view>
+				<view class="circle2"></view>
+			</view>
+			<view class="" style="height: 120rpx;"></view>
 		</view>
 		<view class="listenOrder" v-else>
 			<view class="details" v-for="(item,index) in orderData">
@@ -126,11 +126,11 @@
 
 		<u-popup :show="openShow" @close="openShow=false" mode="center" round='20'>
 			<view class="refuse_box">
-				<view  style="height: 84rpx;"></view>
+				<view style="height: 84rpx;"></view>
 				<image src="../../static/login/vx.png" mode="aspectFill" class="refuse_image"></image>
 				<view class="refuse_text">拒单后可能会影响您的行为分</view>
-				<view  style="height: 93rpx;"></view>
-				<view  style="display: flex;">
+				<view style="height: 93rpx;"></view>
+				<view style="display: flex;">
 					<view class="refuse_button" @click="refuse">仍要拒绝</view>
 					<view class="cancel_button" @click="cancel_two">取消</view>
 				</view>
@@ -141,6 +141,7 @@
 
 <script>
 	export default {
+
 		data() {
 			return {
 				src: '',
@@ -180,11 +181,11 @@
 		},
 		methods: {
 			//仍要拒绝
-			refuse(){
+			refuse() {
 				this.openShow = false
 			},
 			//取消警告第二次
-			cancel_two(){
+			cancel_two() {
 				this.openShow = false
 				this.show = true
 			},
@@ -222,16 +223,16 @@
 
 <style lang="scss" scoped>
 	.circleBox {
-	 width: 340px;
-	 height: 340px;
-background-color: #c3eff5;
-	 position: relative;
-	 border-radius: 999px;
-	 margin: 0 auto;
+		width: 340px;
+		height: 340px;
+		background-color: #c3eff5;
+		position: relative;
+		border-radius: 999px;
+		margin: 0 auto;
 	}
 
 	/* 扩散动画 */
-	.circle{
+	.circle {
 		width: 270rpx;
 		height: 270rpx;
 		border-radius: 999px;
@@ -246,37 +247,64 @@ background-color: #c3eff5;
 		z-index: 99;
 		opacity: 0.5;
 	}
-	 .circle1, .circle2, .circle3  {
-	    width: 120rpx;
-	    height: 120rpx;
-	    background: #b3c5ff;
-	    border: 1px solid #b3c5ff;
-	    border-radius: 999px;
+
+	.circle1,
+	.circle2,
+	.circle3 {
+		width: 120rpx;
+		height: 120rpx;
+		background: #b3c5ff;
+		border: 1px solid #b3c5ff;
+		border-radius: 999px;
 		top: 41%;
 		right: 40%;
 		position: absolute;
 	}
-	.circle1, .circle2, .circle3  {
-	    /* animation: circleChange 2s 1s ease-out infinite; */
-	    animation-name: circleChange;
-	    animation-duration: 3s;
-	    animation-iteration-count: infinite;
-	    animation-timing-function: linear;
+
+	.circle1,
+	.circle2,
+	.circle3 {
+		/* animation: circleChange 2s 1s ease-out infinite; */
+		animation-name: circleChange;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
 	}
+
 	.circle1 {
-	    animation-delay: 1s;
+		animation-delay: 1s;
 	}
+
 	.circle2 {
-	    animation-delay: 2s;
+		animation-delay: 2s;
 	}
-	
-	
-	@keyframes circleChange{
-	    0%{transform: scale(1);opacity: 0.95;}
-	    25%{transform: scale(2);opacity: 0.75;}
-	    50%{transform: scale(3);opacity: 0.5;}
-	    75%{transform: scale(4);opacity: 0.25;}
-	    100%{transform: scale(5);opacity: 0.05;}
+
+
+	@keyframes circleChange {
+		0% {
+			transform: scale(1);
+			opacity: 0.95;
+		}
+
+		25% {
+			transform: scale(2);
+			opacity: 0.75;
+		}
+
+		50% {
+			transform: scale(3);
+			opacity: 0.5;
+		}
+
+		75% {
+			transform: scale(4);
+			opacity: 0.25;
+		}
+
+		100% {
+			transform: scale(5);
+			opacity: 0.05;
+		}
 	}
 
 	.refuse_box {
@@ -335,6 +363,8 @@ background-color: #c3eff5;
 			display: flex;
 			align-items: center;
 			padding: var(--status-bar-height) 59upx 0 40upx;
+			padding-top: 150rpx;
+			padding-bottom: 20rpx;
 
 			.contain {
 				width: 100%;
@@ -536,17 +566,21 @@ background-color: #c3eff5;
 					line-height: 80px;
 					border-radius: 50%;
 					position: absolute;
+
 					.w2 {
 						animation-delay: 1s;
 					}
+
 					.w3 {
 						animation-delay: 2s;
 					}
+
 					.w4 {
 						animation-delay: 3s;
 					}
 				}
 			}
+
 			@-webkit-keyframes opac {
 				from {
 					opacity: 1;
@@ -555,6 +589,7 @@ background-color: #c3eff5;
 					top: 50%;
 					left: 50%;
 				}
+
 				to {
 					opacity: 0;
 					width: 100%;
