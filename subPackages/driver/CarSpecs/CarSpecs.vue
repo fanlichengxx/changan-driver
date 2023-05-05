@@ -1,7 +1,7 @@
 <template>
 	<view class="box">
 		<u-navbar title="车辆规格" :fixed="true" titleStyle="color:#202020;font-size:36rpx;font-weight:bold"
-			:autoBack="true" :placeholder="true">
+			:autoBack="false" :placeholder="true" @leftClick='save()'>
 		</u-navbar>
 		<view class="switch_group">
 			<text>车厢是否为高顶</text>
@@ -83,7 +83,7 @@
 
 
 
-		<button class="btn">保存</button>
+		<button class="btn" @click="save">保存</button>
 
 
 
@@ -202,6 +202,12 @@
 			}
 		},
 		methods: {
+			save() {
+				this.$emit('save')
+			},
+
+
+
 			singleSelect(i, k) {
 				(this.singleData[k].singleTag) = i
 				console.log('单选标签id' + i);
@@ -253,21 +259,15 @@
 	.box {
 		position: relative;
 		padding-bottom: 175rpx * 2;
-
 	}
-
-
-
 	.switch_group {
-
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		background-color: #fff;
 		padding: 46rpx 60rpx;
 		border: 1px solid #eee;
-		margin-bottom: 20rpx;
-
+		border-bottom: 20rpx solid #F6F6F6;
 		>text {
 			font-size: 28rpx;
 			color: #666666;
@@ -365,6 +365,7 @@
 					display: flex;
 					flex-wrap: wrap;
 					padding: 36rpx 0rpx 26rpx 20rpx;
+
 					>.subTag {
 						width: 145rpx;
 						height: 70rpx;
@@ -402,7 +403,7 @@
 							right: -4%;
 							top: -23%;
 
-							 .image {
+							.image {
 								width: 100%;
 								height: 100%;
 							}

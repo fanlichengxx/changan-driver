@@ -44,7 +44,7 @@
 		methods: {
 addCar(){
 	uni.navigateTo({
-		url:'/subPackages/driver/selectCarType/selectCarType'
+		url:'/subPackages/driver/confirm/confirm?cont=2'
 	})
 },
 goBack(){

@@ -1,10 +1,10 @@
 <!-- 司机加盟信息 -->
 <template>
 	<view class="confirm paddTopheder">
-		<Header title="司机加盟-确认信息" />
-		<view class="main">
+		<view class="main" v-show='!typeShow&!specsShow'>
+			<Header title="司机加盟-确认信息" />
 			<!-- 司机信息 -->
-			<view class="driver">
+			<view class="driver" v-if='cont!=2'>
 				<view class="title">司机信息</view>
 				<view class="input_box">
 					<view class="input_box_view">
@@ -70,7 +70,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="driver" v-if="cont==1">
+			<view class="driver" v-if="cont==1 || cont==2">
 				<view class="title">车辆信息</view>
 				<view class="input_box">
 					<view class="input_box_view">
@@ -87,7 +87,7 @@
 							<view class="input_box_wen">*</view>
 							<view class="input_box_title">车辆类别：</view>
 						</view>
-						<view class="change_box">
+						<view class="change_box" @click="tocategory">
 							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
 							<u-icon name="arrow-right"></u-icon>
 						</view>
@@ -108,7 +108,7 @@
 							<view class="input_box_wen">*</view>
 							<view class="input_box_title">规格：</view>
 						</view>
-						<view class="change_box">
+						<view class="change_box" @click="toType">
 							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
 							<u-icon name="arrow-right"></u-icon>
 						</view>
@@ -151,36 +151,65 @@
 					</view>
 				</view>
 			</view>
+			<view class="btn" style="width: 710rpx;margin-left: 20rpx;margin-top: 60rpx;">
+				<button type="primary" @click="confirm"> 提交</button>
+			</view>
 		</view>
-		<view class="btn" style="width: 710rpx;margin-left: 20rpx;margin-top: 60rpx;">
-			<button type="primary" @click="confirm"> 提交</button>
-		</view>
-
+		
+		<CarSpecs v-show="specsShow" @save='save'/>
+		<selectCarType v-show="typeShow" @determine='determine'/>
 	</view>
 </template>
 
 <script>
 	import Header from '@/components/header/header.vue'
+	import CarSpecs from '@/subPackages/driver/CarSpecs/CarSpecs.vue'
+	import selectCarType from '@/subPackages/driver/selectCarType/selectCarType.vue'
 	export default {
 		data() {
 			return {
-				cont:0
-
+				cont: 1,
+				specsShow: false,
+				typeShow: false,
 			}
 
 		},
 		methods: {
+			//
+			save(){
+				this.specsShow=false
+			},
+			//
+			determine(){
+				this.typeShow=false
+			},
 			// 提交按钮
 			confirm() {
-				console.log('提交', this.model);
+				console.log('提交', this.model)
+			},
+			toType() {
+				// uni.navigateTo({
+				// 	url:'/subPackages/driver/selectCarType/selectCarType'
+				// })
+				this.typeShow=true
+				
+			},
+			tocategory() {
+				// uni.navigateTo({
+				// 	url:'/subPackages/driver/CarSpecs/CarSpecs'
+				// })
+				this.specsShow=true
+				
 			}
 		},
 		components: {
-			Header
+			Header,
+			CarSpecs,
+			selectCarType
 		},
 		onLoad(option) {
 			//接收跳转过来的参数
-			if(option.cont){
+			if (option.cont) {
 				this.cont = option.cont
 			}
 
@@ -254,7 +283,6 @@
 		width: 100%;
 		height: calc(100vh - var(--window-bottom));
 		box-sizing: border-box;
-		background-color: #F6F6F6;
 
 		.driver,
 		.vehicle {
@@ -263,7 +291,7 @@
 			background-color: #FFFFFF;
 			box-sizing: border-box;
 			padding-bottom: 30rpx;
-
+border-top: 20rpx solid #f6f6f6;
 			.title {
 				font-size: 34upx;
 				font-weight: 900;
@@ -279,5 +307,8 @@
 		}
 
 
+	}
+	page{
+		background-color: #fff;
 	}
 </style>

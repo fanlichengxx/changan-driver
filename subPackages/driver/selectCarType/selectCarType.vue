@@ -1,10 +1,10 @@
 <template>
 	<view class="box">
 		<u-navbar leftIcon="close" leftIconSize="36rpx" leftIconColor="#202020" title="选择车型"
-			titleStyle="color:#202020;font-size:36rpx;font-weight:bold" :fixed="true" :autoBack="true"
-			:placeholder="true"></u-navbar>
+			titleStyle="color:#202020;font-size:36rpx;font-weight:bold" :fixed="true" 
+			 :autoBack="false" :placeholder="true" @leftClick='determine()'></u-navbar>
 
-		<view class="main">
+		<view class="main" style="margin-top: -120rpx;">
 			<view class="left">
 				<view :class="{select_item:true,active:ShowIndex==index}" @click="toggle(index)"
 					v-for="(item,index) in carData" :ket="item.name">
@@ -207,26 +207,25 @@
 		},
 
 		methods: {
+			determine() {
+				this.$emit('determine')
+			},
 			selectedRadio(index, showIndex) { //点击单选触发事件,修改selected值,代表当前选择的单选框
 				this.carData[showIndex].selected = index
 			},
-determine(){
-	uni.navigateTo({
-		url:'/subPackages/driver/CarSpecs/CarSpecs'
-	})
-},
+			
 			toggle(index) {
 				this.ShowIndex = index
 			}
 		}
 	}
+
 </script>
 
 <style lang="scss" scoped>
 	.box {
 		position: relative;
 		padding-bottom: 175rpx * 2;
-
 	}
 
 	.main {

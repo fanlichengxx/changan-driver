@@ -48,7 +48,16 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/my/setMy/setMy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设置",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 		"root": "subPackages/login",
 		"pages": [{
@@ -173,19 +182,7 @@
 				"enablePullDownRefresh": false
 			}
 		},{
-			"path": "selectCarType/selectCarType",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},{
 			"path": "fleetDetail/fleetDetail",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},{
-			"path": "CarSpecs/CarSpecs",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false

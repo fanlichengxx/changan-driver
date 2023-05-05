@@ -87,7 +87,8 @@
 				 class="cell_item"
 				 size='large'
 				 :border='false'
-				 isLink>
+				 isLink
+				 @click='management(5)'>
 				</u-cell>
 			</u-cell-group>
 		</view>
@@ -111,6 +112,9 @@ management(e){
 		break;
 		case 1:
 		url='/pages/my/fleetManage/fleetManage';
+		break;
+		case 5:
+		url='/pages/my/setMy/setMy';
 		break;
 	}
 	uni.navigateTo({
