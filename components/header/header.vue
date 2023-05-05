@@ -1,11 +1,11 @@
 <template>
 	<u-navbar :title="title" @leftClick="leftClick" @rightClick="rightClick" :autoBack="false" :bgColor="bgColor"
-		:titleStyle="{'font-weight': 600,'color':color,'font-family': 'PingFang SC-Bold'}">
+		:titleStyle="{'font-weight': 600,'font-size':fontSize,'color':color,'font-family': 'PingFang SC-Bold'}">
 		<view class="u-nav-slot" slot="left">
 			<u-icon :name="name" :size="size" :bold="true" :color="color" v-if="name"></u-icon>
 		</view>
 		<view class="u-nav-slot" slot="right" v-if="rightIcon"
-			style="font-size: 28upx;font-weight: 500;letter-spacing: 1upx">
+			:style="{'font-size': '28upx','font-weight': 500,'color':rightColor}">
 			{{rightIcon}}
 		</view>
 	</u-navbar>
@@ -19,12 +19,18 @@
 				typeof: String,
 				default: ''
 			},
+			//中间文本字体大小
+			fontSize: {
+				typeof: String,
+				default: 18
+			},
+
 			//左侧图标
 			name: {
 				typeof: String,
 				default: 'arrow-left'
 			},
-			//字体大小
+			//图标字体大小
 			size: {
 				typeof: Number,
 				default: 18
@@ -48,6 +54,11 @@
 			rightIcon: {
 				typeof: String,
 				default: ''
+			},
+			//右侧字体颜色
+			rightColor: {
+				typeof: String,
+				default: '#000'
 			}
 		},
 		data() {

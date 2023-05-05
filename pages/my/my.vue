@@ -35,7 +35,7 @@
 		</view>
 		<view class="cell">
 			<u-cell-group >
-				<u-cell icon='../../static/tabBar/cheliang.png'  title="车辆管理" 
+				<u-cell :icon="require('../../static/tabBar/cheliang.png')"  title="车辆管理" 
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"
@@ -44,7 +44,7 @@
 				 :border='false'
 				 isLink @click='management(0)'>
 				</u-cell>
-				<u-cell icon='../../static/tabBar/chedui.png'  title="车队管理"
+				<u-cell :icon="require('../../static/tabBar/chedui.png')"  title="车队管理"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"
@@ -53,7 +53,7 @@
 				 :border='false'	
 				 isLink  @click='management(1)'>
 				</u-cell>
-				<u-cell icon='../../static/tabBar/dingdan.png'  title="我的订单"
+				<u-cell :icon="require('../../static/tabBar/dingdan.png')"  title="我的订单"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"
@@ -62,7 +62,7 @@
 				 :border='false'
 				 isLink>
 				</u-cell>
-				<u-cell icon='../../static/tabBar/falv.png'  title="法律条款"
+				<u-cell :icon="require('../../static/tabBar/falv.png')"  title="法律条款"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"
@@ -71,7 +71,7 @@
 				 :border='false'
 				 isLink>
 				</u-cell>
-				<u-cell icon='../../static/tabBar/kefu.png'  title="客服中心"
+				<u-cell :icon="require('../../static/tabBar/kefu.png')"  title="客服中心"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"
@@ -80,7 +80,7 @@
 				 :border='false'
 				 isLink>
 				</u-cell>
-				<u-cell icon='../../static/tabBar/shezhi.png'  title="设置"
+				<u-cell :icon="require('../../static/tabBar/shezhi.png')" title="设置"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
 				 :iconStyle="{marginTop:'20upx'}"
 				 :rightIconStyle="{marginTop:'20upx'}"

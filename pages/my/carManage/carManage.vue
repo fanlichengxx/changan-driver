@@ -27,7 +27,7 @@
 			</view>
 		</view>
 
-		<view class="goBack">
+		<view class="goBack" @click="goBack">
 			<view class="iconfont icon-zuojiantou">
 			</view>
 		</view>
@@ -45,6 +45,11 @@
 addCar(){
 	uni.navigateTo({
 		url:'/subPackages/driver/selectCarType/selectCarType'
+	})
+},
+goBack(){
+	uni.switchTab({
+		url:'/pages/my/my'
 	})
 }
 		}

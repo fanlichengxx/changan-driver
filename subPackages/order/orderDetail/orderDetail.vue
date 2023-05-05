@@ -87,7 +87,7 @@
 					<view class="">联系下单人</view>
 				</view>
 				<view class="bottom_ren" :style="state==1 ? 'width: 710rpx;':'width: 450rpx'">
-					<view  @click="golocation(state)" class="" style="margin-right: 20rpx;">{{['前往发货地','前往发货地','完成装货','完成卸货','到达目的地'][state]}}
+					<view  @click="golocation(state)" class="" style="margin-right: 20rpx;">{{['前往发货地','前往发货地','完成装货','到达目的地','完成卸货'][state]}}
 					</view>
 					<image v-if="state==1 || state==0" src="@/static/order/youjian.png" mode="aspectFill"></image>
 				</view>
@@ -102,7 +102,7 @@
 		data() {
 			return {
 				timestamp: 86400,
-				state: 0,
+				state: 4,
 				time: '03月22日 12:31',
 				data: {
 					name: '重庆长安明生物流公司',
@@ -123,6 +123,7 @@
 						url:'/subPackages/map/OrderNavigation/OrderNavigation'
 					})
 				}
+				
 			},
 			//上传图片
 			uplod(){

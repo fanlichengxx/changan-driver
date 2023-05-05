@@ -32,23 +32,25 @@
 			<view class="ordering">
 				<view class="btn" @click="orderDetail('e')">进行中订单</view>
 			</view>
-			<view class="main">
+			<!-- <view class="main">
 				<view class="title" @click="changeOrder">请打开听单按钮</view>
 				<view class="animate-wave">
-
 					<view class="logo">
 						<view class="w1">
-
 						</view>
 						<view class="w2"></view>
 						<view class="w3"></view>
 						<view class="w4"></view>
 					</view>
-
 				</view>
-
-
-			</view>
+			</view> -->
+			<view class="" style="height: 200rpx;"></view>
+				<view class="circleBox">
+				    <view class="circle"  @click.stop="changeOrder">请打开听单按钮</view>
+				    <view class="circle1"></view>
+				    <view class="circle2"></view>
+				</view>
+		<view class="" style="height: 120rpx;"></view>
 		</view>
 		<view class="listenOrder" v-else>
 			<view class="details" v-for="(item,index) in orderData">
@@ -219,6 +221,64 @@
 </script>
 
 <style lang="scss" scoped>
+	.circleBox {
+	 width: 340px;
+	 height: 340px;
+background-color: #c3eff5;
+	 position: relative;
+	 border-radius: 999px;
+	 margin: 0 auto;
+	}
+
+	/* 扩散动画 */
+	.circle{
+		width: 270rpx;
+		height: 270rpx;
+		border-radius: 999px;
+		background-color: #fff;
+		top: 30%;
+		right: 30%;
+		position: absolute;
+		font-size: 30rpx;
+		color: #666666;
+		text-align: center;
+		line-height: 270rpx;
+		z-index: 99;
+		opacity: 0.5;
+	}
+	 .circle1, .circle2, .circle3  {
+	    width: 120rpx;
+	    height: 120rpx;
+	    background: #b3c5ff;
+	    border: 1px solid #b3c5ff;
+	    border-radius: 999px;
+		top: 41%;
+		right: 40%;
+		position: absolute;
+	}
+	.circle1, .circle2, .circle3  {
+	    /* animation: circleChange 2s 1s ease-out infinite; */
+	    animation-name: circleChange;
+	    animation-duration: 3s;
+	    animation-iteration-count: infinite;
+	    animation-timing-function: linear;
+	}
+	.circle1 {
+	    animation-delay: 1s;
+	}
+	.circle2 {
+	    animation-delay: 2s;
+	}
+	
+	
+	@keyframes circleChange{
+	    0%{transform: scale(1);opacity: 0.95;}
+	    25%{transform: scale(2);opacity: 0.75;}
+	    50%{transform: scale(3);opacity: 0.5;}
+	    75%{transform: scale(4);opacity: 0.25;}
+	    100%{transform: scale(5);opacity: 0.05;}
+	}
+
 	.refuse_box {
 		width: 670rpx;
 		height: 500rpx;
@@ -433,7 +493,6 @@
 		}
 
 		.main {
-
 			width: 100%;
 			height: 600upx;
 			position: relative;
@@ -477,26 +536,17 @@
 					line-height: 80px;
 					border-radius: 50%;
 					position: absolute;
-					// top: 310px;
-					// left: 50upx;
-					// right: 50upx;
-					// margin: 0 auto;
-					// z-index: 9;
-
 					.w2 {
 						animation-delay: 1s;
 					}
-
 					.w3 {
 						animation-delay: 2s;
 					}
-
 					.w4 {
 						animation-delay: 3s;
 					}
 				}
 			}
-
 			@-webkit-keyframes opac {
 				from {
 					opacity: 1;
@@ -505,7 +555,6 @@
 					top: 50%;
 					left: 50%;
 				}
-
 				to {
 					opacity: 0;
 					width: 100%;

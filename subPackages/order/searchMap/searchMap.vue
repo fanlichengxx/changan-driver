@@ -5,7 +5,7 @@
 		<view class="addres">
 			<view class="city">
 				<text style="margin-right:10upx;">城市</text>
-				<u-icon name="arrow-down-fill" size="12px" @tap="$u.throttle(cityList(), 500)"></u-icon>
+				<u-icon name="arrow-down-fill" size="12px" @tap="cityList()"></u-icon>
 			</view>
 			<u--input placeholder="输入地址" v-model.trim="addres" clearable border="none" placeholderClass="searchAddres">
 			</u--input>

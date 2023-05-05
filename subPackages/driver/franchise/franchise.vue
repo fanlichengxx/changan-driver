@@ -48,7 +48,8 @@
 	export default {
 		data() {
 			return {
-				value: '',
+				value:true,
+				cont:1,
 				isup: false,
 				currentPhoto: '-1',
 				fileList6: [],
@@ -120,12 +121,15 @@
 			// 是否带车加入
 			change(e) {
 				console.log('change', e);
+				
 				if (e == false) {
 					this.fileData = this.data.filter(item => {
 						return item.state !== 1
 					})
+				this.cont=0
 				} else {
 					this.fileData = this.data
+					this.cont=1
 				}
 			},
 			// 点击上传
@@ -208,9 +212,8 @@
 
 			// 跳转确认信息--OCR识别数据带过去
 			confirm() {
-				console.log('提交', this.model);
 				uni.navigateTo({
-					url: '/subPackages/driver/confirm/confirm'
+					url: '/subPackages/driver/confirm/confirm?cont='+this.cont
 				})
 			}
 		},
@@ -240,7 +243,6 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		height: calc(100vh - var(--window-bottom));
 		box-sizing: border-box;
 		background-color: #F6F6F6;
 
@@ -252,7 +254,7 @@
 				border-radius: 40upx 40upx 0 0;
 				background-color: #FFFFFF;
 				box-sizing: border-box;
-
+padding-bottom: 60rpx;
 				.title {
 					font-size: 34upx;
 					font-weight: 900;

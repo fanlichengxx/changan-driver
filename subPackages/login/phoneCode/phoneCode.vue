@@ -10,7 +10,7 @@
 				<u-code-input v-model="code" mode="line" :maxlength="6" @finish="finish"></u-code-input>
 			</view>
 			<view class="time" :class="{'chongTime':time===0}">
-				<text @tap="$u.throttle(againCode(), 500)">重新获取{{time>0?`（${time}）`:''}}</text>
+				<text @tap="againCode()">重新获取{{time>0?`（${time}）`:''}}</text>
 			</view>
 		</view>
 	</view>

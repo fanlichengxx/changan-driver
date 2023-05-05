@@ -21,7 +21,7 @@
 						</u-input>
 					</u-form-item>
 				</u--form>
-				<u-button type="primary" text="获取验证码" class="authority" @tap="$u.throttle(phoneCode(), 500)">
+				<u-button type="primary" text="获取验证码" class="authority" @tap="phoneCode()">
 				</u-button>
 			</view>
 			<!-- 一键登录 -->
@@ -29,13 +29,14 @@
 				<view class="phone">
 					{{form.phone|getPhone}}
 				</view>
-				<u-button type="primary" text="本机号码一键登录" class="authority" @tap="$u.throttle(yijianLogin(), 1000)">
+				<view style="height: 60upx;"></view>
+				<u-button type="primary" text="本机号码一键登录" class="authority" @tap="yijianLogin()">
 				</u-button>
 			</view>
 			<!-- 协议 -->
-			<view class="agree_onBox">
-				<u-checkbox-group v-model="agreeOn" :labelSize="14" :size="14">
-					<view class="agreeOn">
+			<view class="agree_onBox" style="width: 700rpx;">
+				<u-checkbox-group v-model="agreeOn" :labelSize="14" :size="14" style="width: 700rpx;">
+					<view class="agreeOn" style="width: 700rpx;">
 						<u-checkbox shape="circle" label='我已阅读并同意' :labelSize="14" name="1" />
 						<view>《同城货运用户协议》</view>
 						<view>《隐私政策》</view>
@@ -46,14 +47,14 @@
 			</view>
 		</view>
 		<view class="loginType">
-			<view class="typeBox" @tap="$u.throttle(loginTypeMD('wx'), 1000)" v-if="loginType!=='wx'">
-				<u-avatar src="../../static/login/vx.png"></u-avatar>
+			<view class="typeBox" @tap="loginTypeMD('wx')" v-if="loginType!=='wx'">
+				<u-avatar :src="require('../../static/login/vx.png')"></u-avatar>
 				<view class="text">
 					微信登录
 				</view>
 			</view>
-			<view class="typeBox" @tap="$u.throttle(loginTypeMD('phone'), 1000)" v-if="loginType!=='phone'">
-				<u-avatar src="../../static/login/phone.png"></u-avatar>
+			<view class="typeBox" @tap="loginTypeMD('phone')" v-if="loginType!=='phone'">
+				<u-avatar :src="require('../../static/login/phone.png')"></u-avatar>
 				<view class="text">
 					手机号登录
 				</view>
@@ -175,7 +176,7 @@
 			}
 
 			.authority {
-				margin-top: 60upx;
+				
 				width: 90%;
 			}
 

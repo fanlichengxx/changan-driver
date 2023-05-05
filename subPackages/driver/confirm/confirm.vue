@@ -6,38 +6,153 @@
 			<!-- 司机信息 -->
 			<view class="driver">
 				<view class="title">司机信息</view>
-				<u--form labelPosition="left" :model="driver" :rules="rules" ref="uForm" :labelStyle="{color:'#202020',marginLeft:'60upx',fontSize:'28upx'}">
-					<u-form-item label="姓名" labelWidth='100'  prop="name" borderBottom ref="item1">
-						<u--input v-model="driver.name" border="none"></u--input>
-					</u-form-item>
-					<u-form-item label="接单城市" labelWidth='100' prop="city" borderBottom @click="showSex = true; hideKeyboard()"
-						ref="item1">
-						<u--input v-model="driver.city" disabled disabledColor="#ffffff" placeholder="请选择"
-							border="none"></u--input>
-						<u-icon slot="right" name="arrow-right" class="icon"></u-icon>
-					</u-form-item>
-					<u-form-item label="司机电话" labelWidth='100' prop="driverPhone" borderBottom ref="item1">
-						<u--input v-model="driver.driverPhone" border="none"></u--input>
-					</u-form-item>
-					<u-form-item label="准驾车型" labelWidth='100' prop="vehicleType" borderBottom @click="showType = true; hideKeyboard()"
-						ref="item1">
-						<u--input v-model="driver.vehicleType" disabled disabledColor="#ffffff" placeholder="请选择"
-							border="none"></u--input>
-						<u-icon slot="right" name="arrow-right" class="icon"></u-icon>
-					</u-form-item>
-				</u--form>
-				<u-action-sheet :show="showCity" :actions="citys" title="请选择接单城市" 
-					@close="showSex = false" @select="citySelect">
-				</u-action-sheet>
-				<u-action-sheet :show="showType" :actions="type" title="请选择车辆类型"
-					@close="showSex = false" @select="typeSelect">
-				</u-action-sheet>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">司机姓名：</view>
+						</view>
+
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">身份证号：</view>
+						</view>
+
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">年龄：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">接单城市：</view>
+						</view>
+						<view class="change_box">
+							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
+							<u-icon name="arrow-right"></u-icon>
+						</view>
+
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">联系电话：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">准驾车型：</view>
+						</view>
+						<view class="change_box">
+							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
+							<u-icon name="arrow-right"></u-icon>
+						</view>
+					</view>
+				</view>
 			</view>
-			<view class="vehcile">
+			<view class="driver" v-if="cont==1">
 				<view class="title">车辆信息</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">车牌号：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">车辆类别：</view>
+						</view>
+						<view class="change_box">
+							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
+							<u-icon name="arrow-right"></u-icon>
+						</view>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">品牌型号：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">规格：</view>
+						</view>
+						<view class="change_box">
+							<input placeholder="请选择" disabled="true" style="width: 100%;"></input>
+							<u-icon name="arrow-right"></u-icon>
+						</view>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">厢长（米）：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">载方（方）：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">载重（吨）：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
+				<view class="input_box">
+					<view class="input_box_view">
+						<view class="input_box_flex">
+							<view class="input_box_wen">*</view>
+							<view class="input_box_title">车高（米）：</view>
+						</view>
+						<input placeholder="请输入"></input>
+					</view>
+				</view>
 			</view>
 		</view>
-		<view class="btn">
+		<view class="btn" style="width: 710rpx;margin-left: 20rpx;margin-top: 60rpx;">
 			<button type="primary" @click="confirm"> 提交</button>
 		</view>
 
@@ -49,57 +164,12 @@
 	export default {
 		data() {
 			return {
-				showCity: false,
-				showType: false,
-				driver: {
-					name:'',
-					city:'',
-					vehicleType:'',
-					driverPhone:''
-				}
-					
-				,
-				citys: [{name:'重庆',value:'cq'}],
-				type:[{name:'小面',value:'c1'}],
-				rules: {
-					'name': {
-						type: 'string',
-						required: true,
-						message: '请填写姓名',
-						trigger: ['blur', 'change']
-					},
-					'city': {
-						type: 'string',
-						max: 1,
-						required: true,
-						message: '请选择接单城市',
-						trigger: ['blur', 'change']
-					},
-					'driverPhone':{
-								// 自定义验证函数，见上说明
-								validator: (rule, value, callback) => {
-									// 上面有说，返回true表示校验通过，返回false表示不通过
-									// uni.$u.test.mobile()就是返回true或者false的
-									return uni.$u.test.mobile(value);
-								},
-								message: '手机号码不正确',
-								// 触发器可以同时用blur和change
-								trigger: ['change','blur'],
-							}
-				},
-				radio: '',
-				switchVal: false
+				cont:0
 
 			}
 
 		},
 		methods: {
-			citySelect(e) {
-				this.model1.userInfo.sex = e.name
-				this.$refs.uForm.validate('userInfo.sex')
-			},
-
-
 			// 提交按钮
 			confirm() {
 				console.log('提交', this.model);
@@ -110,13 +180,74 @@
 		},
 		onLoad(option) {
 			//接收跳转过来的参数
-			console.log(option);
+			if(option.cont){
+				this.cont = option.cont
+			}
 
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.change_box {
+		display: flex;
+		align-items: center;
+		width: 70%;
+	}
+
+	.input_box_flex {
+		display: flex;
+		width: 30%;
+	}
+
+	.input_box_wen {
+		margin-right: 10rpx;
+		color: #F8474F;
+	}
+
+	.input_box_title {
+		color: #444444;
+		font-size: 26rpx;
+	}
+
+	.input_box {
+		margin: 60rpx;
+		margin-bottom: 20rpx;
+	}
+
+	.input_box_view {
+		font-size: 28rpx;
+		display: flex;
+		align-items: center;
+	}
+
+	.input_box input {
+		text-align: right;
+		font-size: 26rpx;
+		width: 70%;
+		color: #999999;
+	}
+
+	::-webkit-input-placeholder {
+		/* WebKit browsers */
+		direction: rtl;
+	}
+
+	:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		direction: rtl;
+	}
+
+	::-moz-placeholder {
+		/* Mozilla Firefox 19+ but I'm not sure about working */
+		direction: rtl;
+	}
+
+	:-ms-input-placeholder {
+		/* Internet Explorer 10+ */
+		direction: rtl;
+	}
+
 	.confirm {
 		display: flex;
 		flex-direction: column;
@@ -124,12 +255,16 @@
 		height: calc(100vh - var(--window-bottom));
 		box-sizing: border-box;
 		background-color: #F6F6F6;
-		.driver,.vehicle{
+
+		.driver,
+		.vehicle {
 			width: 100%;
-			margin-top: 10upx ;
+			margin-top: 10upx;
 			background-color: #FFFFFF;
 			box-sizing: border-box;
-			.title{
+			padding-bottom: 30rpx;
+
+			.title {
 				font-size: 34upx;
 				font-weight: 900;
 				font-family: PingFang SC;
@@ -137,7 +272,8 @@
 				padding-top: 40upx;
 				padding-left: 60upx;
 			}
-			.icon{
+
+			.icon {
 				margin-right: 50upx;
 			}
 		}
