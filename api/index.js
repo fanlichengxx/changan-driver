@@ -3,7 +3,7 @@ import {
 } from '@escook/request-miniprogram'
 import store from '@/store/index.js'
 // 请求的根路径
-$http.baseUrl = 'http://192.168.31.157'
+$http.baseUrl = 'http://192.168.31.27:8080'
 // $http.baseUrl = 'http://192.168.0.131:8080'
 
 // 请求拦截器

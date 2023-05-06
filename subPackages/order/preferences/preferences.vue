@@ -144,15 +144,14 @@
 						</view>
 						<view class="preference_item_box_top_number">地址簿</view>
 					</view>
+				</view>
 			<view class="oftenadd">
-				<view class="preference_add_flx">
+				<view class="preference_add_flx" @click="toAdd">
 					<image src="@/static/order/jia.png" mode="aspectFill"></image>
 					<view>添加路线</view>
 				</view>
 			</view>
-				</view>
-			
-				<view style="height: 20rpx;"></view>
+				<view style="height: 50rpx;"></view>
 			</view>
 			<view class="preference_button">
 				<u-button text="保存设置" color='#00A0E9' class="preference_button_ptao" type='primary'></u-button>
@@ -210,6 +209,12 @@
 			}
 		},
 		methods: {
+			//跳转地址列表
+			toAdd(){
+				uni.navigateTo({
+					url:'/subPackages/order/addressBook/addressBook'
+				})
+			},
 			//打开偏好路线
 			preferenceTap() {
 				this.preference = true
@@ -277,9 +282,8 @@
 
 <style lang="scss" scoped>
 	.oftenadd{
-		width: 670rpx;
+		width: 710rpx;
 		margin-top: 40rpx;
-		
 		border-radius: 10rpx;
 		background-color: #fff;
 		height: 100rpx;

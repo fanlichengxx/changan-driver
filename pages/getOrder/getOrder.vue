@@ -44,16 +44,16 @@
 					</view>
 				</view>
 			</view> -->
-			<view class="" style="height: 200rpx;"></view>
+			<view class="" style="height: 100rpx;"></view>
 			<view class="circleBox">
 				<view class="circle" @click.stop="changeOrder">请打开听单按钮</view>
 				<view class="circle1"></view>
 				<view class="circle2"></view>
 			</view>
-			<view class="" style="height: 120rpx;"></view>
+			<view class="" style="height: 50rpx;"></view>
 		</view>
-		<view class="listenOrder" v-else>
-			<view class="details" v-for="(item,index) in orderData">
+		<scroll-view class="listenOrder" v-else scroll-y="true" style="height: 100vh;">
+			<view class="details" v-for="(item,index) in orderData" @click="torob(item)">
 				<view class="top">
 					<view class="left">
 						<view class="left_one">
@@ -86,7 +86,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</scroll-view>
 
 		<!-- 派单模态框 -->
 		<view class="dispatch">
@@ -98,15 +98,11 @@
 					</view>
 					<view class="dispatch_contain">
 						<view class="one">
-
 							<image src="../../static/order/zhuang.png"></image>
-
 							<view class="one_right">中国邮政银行</view>
 						</view>
 						<view class="two">
-
 							<image src="../../static/order/xie1.png"></image>
-
 							<view class="one_right">金源大道砚北B区</view>
 						</view>
 						<view class="three">
@@ -115,19 +111,17 @@
 						</view>
 					</view>
 					<view class="button">
-
 						<button @click="cancle" class="cancle">拒绝</button>
 						<button @click="getOrder" class="get">立即接单</button>
 					</view>
 				</view>
 			</u-modal>
 		</view>
-
-
-		<u-popup :show="openShow" @close="openShow=false" mode="center" round='20'>
+		<!-- 仍要拒绝 -->
+		<u-popup :show="openShow" mode="center" round='20'>
 			<view class="refuse_box">
 				<view style="height: 84rpx;"></view>
-				<image src="../../static/login/vx.png" mode="aspectFill" class="refuse_image"></image>
+				<view class="warning">!</view>
 				<view class="refuse_text">拒单后可能会影响您的行为分</view>
 				<view style="height: 93rpx;"></view>
 				<view style="display: flex;">
@@ -136,6 +130,35 @@
 				</view>
 			</view>
 		</u-popup>
+		<!-- 抢单 -->
+		<view class="dispatch">
+			<u-modal :show="robShow" :showCancelButton="false" :showConfirmButton='false' width='335px'
+				@close='robShow=false' :closeOnClickOverlay='true'>
+				<view class="slot-content">
+					<view class="title">
+						今天 ：周五 11:46
+						<view class="tag">实时</view>
+					</view>
+					<view class="dispatch_contain">
+						<view class="one">
+							<image src="../../static/order/zhuang.png"></image>
+							<view class="one_right">中国邮政银行</view>
+						</view>
+						<view class="two">
+							<image src="../../static/order/xie1.png"></image>
+							<view class="one_right">金源大道砚北B区</view>
+						</view>
+						<view class="three">
+							<view class="left">距离您1公里</view>
+							<view class="right">99元</view>
+						</view>
+					</view>
+					<view class="button_rob">
+						<button @click="getOrder" class="get">立即接单</button>
+					</view>
+				</view>
+			</u-modal>
+		</view>
 	</view>
 </template>
 
@@ -145,6 +168,7 @@
 		data() {
 			return {
 				src: '',
+				robShow: false,
 				current: false,
 				show: false,
 				openShow: false,
@@ -179,7 +203,22 @@
 				]
 			}
 		},
+		onLoad(e) {
+			if(e.cont==1){
+				this.current=true
+			}
+		},
 		methods: {
+			//立即接单
+			getOrder(){
+				uni.navigateTo({
+					url:'/subPackages/order/orderDetail/orderDetail'
+				})
+			},
+			//枪单
+			torob(e) {
+				this.robShow = true
+			},
 			//仍要拒绝
 			refuse() {
 				this.openShow = false
@@ -222,12 +261,24 @@
 </script>
 
 <style lang="scss" scoped>
+	.warning{
+		width: 105rpx;
+		height: 105rpx;
+		border-radius: 100%;
+		background-color: #F7B364;
+		color: #fff;
+		font-weight: 600;
+		font-size: 80rpx;
+		text-align: center;
+		line-height: 105rpx;
+		margin: 0 auto;
+	}
 	.circleBox {
-		width: 340px;
-		height: 340px;
+		width: 680rpx;
+		height: 680rpx;
 		background-color: #c3eff5;
 		position: relative;
-		border-radius: 999px;
+		border-radius: 100%;
 		margin: 0 auto;
 	}
 
@@ -235,7 +286,7 @@
 	.circle {
 		width: 270rpx;
 		height: 270rpx;
-		border-radius: 999px;
+		border-radius: 100%;
 		background-color: #fff;
 		top: 30%;
 		right: 30%;
@@ -255,7 +306,7 @@
 		height: 120rpx;
 		background: #b3c5ff;
 		border: 1px solid #b3c5ff;
-		border-radius: 999px;
+		border-radius: 100%;
 		top: 41%;
 		right: 40%;
 		position: absolute;
@@ -305,6 +356,14 @@
 			transform: scale(5);
 			opacity: 0.05;
 		}
+	}
+
+	.button_rob .get {
+		width: 590rpx;
+		height: 90upx;
+		background-color: #00A0E9;
+		color: #FFFFFF;
+		font-family: PingFang SC;
 	}
 
 	.refuse_box {
@@ -474,6 +533,7 @@
 			font-size: 24upx;
 			color: #579AA3;
 			border-radius: 10upx;
+			z-index: 9999;
 
 			.jion {
 				width: 70%;
@@ -508,6 +568,7 @@
 			width: 100%;
 			position: relative;
 			margin: 30upx auto;
+			z-index: 6666;
 
 			.btn {
 				width: 220upx;

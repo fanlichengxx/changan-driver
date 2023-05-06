@@ -57,6 +57,7 @@
             }
             
         }
+       
     ],
 	"subPackages": [{
 		"root": "subPackages/login",
@@ -140,14 +141,36 @@
             ]
 	},
 	{
-		"root": "subPackages/fleet",
+		"root": "subPackages/my",
 		"pages":[ {
-			"path": "fleetDetails/fleetDetails",
+			"path": "LoginSet/LoginSet",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
-		}]
+		},
+		{
+			"path": "privacy/privacy",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "system/system",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "modify/modify",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		}
+		]
 	},
 	{
 		"root": "subPackages/map",

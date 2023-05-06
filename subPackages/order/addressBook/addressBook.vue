@@ -6,33 +6,28 @@
 				@blur="searchMD()"></u-search>
 		</view>
 		<view class="contentBox">
-			<view class="address" v-for="(item,index) in addressList" :key="index" @click="editAddressList(item)">
+			<view class="address" v-for='(item,i) in list'>
 				<view class="left">
-					<view class="title">
-						{{item.name}}
+					<view class="title" style="display: flex;align-items: cneter;">
+						<view>{{item.name}}</view>
+						<image src="@/static/order/xiugai.png" mode="aspectFill"
+							style="width: 39rpx;height: 39rpx;margin-left: 10rpx;" @click="deleteddress(item)"></image>
 					</view>
 					<view class="xiangxi">
-						{{item.address}}
-					</view>
-					<view class="userBox">
-						<view class="name">
-							{{item.contact}}
-						</view>
-						<view class="phone">
-							{{item.phone|getPhone}}
-						</view>
+						{{item.cunt}}
 					</view>
 				</view>
-				<view class="right">
-					<u-icon name="edit-pen" color="#222222 " size="28" @click.native.stop="deleteddress(item.id)">
-					</u-icon>
+				<view class="right" v-if="item.isShow==1" @click="toIshow(item.isShow,i)">
+					<image src="@/static/order/duiquan.png" mode="aspectFill" style="width: 39rpx;height: 39rpx;">
+					</image>
+				</view>
+				<view class="rightquan" v-else @click="toIshow(item.isShow,i)">
 				</view>
 			</view>
 		</view>
-		<u-action-sheet :actions="list" :safeAreaInsetBottom="true" cancelText="取消" @close="show=false"
-			@select="selectClick" :show=" show" />
+
 		<view class="bt">
-			<u-button color="#02A7F0" text="添加地址" @click="show=true"></u-button>
+			<u-button color="#02A7F0" text="添加地址" @click="selectClick"></u-button>
 		</view>
 
 	</view>
@@ -48,17 +43,36 @@
 		data() {
 			return {
 				list: [{
-					name: '新增地址'
-				}, {
-					name: '导入历史地址'
-				}],
+						name: '重庆光环购物公园',
+						cunt: '重庆市渝北区金开大道1003号',
+						isShow: 0
+					},
+					{
+						name: '重庆光环购物公园',
+						cunt: '重庆市渝北区金开大道1003号',
+						isShow: 1
+					},
+					{
+						name: '重庆光环购物公园',
+						cunt: '重庆市渝北区金开大道1003号',
+						isShow: 0
+					}
+				],
 				show: false,
 				index: null,
 				keyword: '',
 			};
 		},
 		methods: {
-			...mapMutations('order', ['deleteAddressList']),
+			//是否为常用路线
+			toIshow(e,i){
+				if(e==1){
+					this.list[i].isShow=0
+				}else{
+					this.list[i].isShow=1
+				}
+			},
+			// ...mapMutations('order', ['deleteAddressList']),
 			//编辑地址
 			deleteddress(id) {
 				uni.navigateTo({
@@ -83,17 +97,15 @@
 			},
 			//添加地址按钮
 			selectClick(val) {
-				if (val.name === '新增地址') {
-					uni.navigateTo({
-						url: '/subPackages/order/addAddress/addAddress'
-					})
-				} else if (val.name === '导入历史地址') {
 
-				}
+				uni.navigateTo({
+					url: '/subPackages/order/addAddress/addAddress'
+				})
+
 			}
 		},
 		computed: {
-			...mapState('address', ['addressList'])
+			// ...mapState('address', ['addressList'])
 		},
 		components: {
 			Header
@@ -106,6 +118,13 @@
 </script>
 
 <style lang="scss" scoped>
+	.rightquan {
+		width: 34rpx;
+		height: 34rpx;
+		border-radius: 100%;
+		border: 1rpx solid #949494;
+	}
+
 	.addressBook {
 		height: 100vh;
 		display: flex;
@@ -162,7 +181,8 @@
 				}
 
 				.right {
-					width: 60upx;
+					width: 36rpx;
+					height: 36rpx;
 				}
 			}
 		}

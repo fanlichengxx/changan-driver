@@ -3,6 +3,8 @@
 	<view class="confirm paddTopheder">
 		<view class="main" v-show='!typeShow&!specsShow'>
 			<Header title="司机加盟-确认信息" />
+
+			<view class="confirm_top_box">* 请核对以下信息，如有误请手动修改</view>
 			<!-- 司机信息 -->
 			<view class="driver" v-if='cont!=2'>
 				<view class="title">司机信息</view>
@@ -70,7 +72,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="driver" v-if="cont==1 || cont==2">
+			<view class="driver" v-if="cont==1 || cont==2" style="border-top: 20rpx solid #f6f6f6;">
 				<view class="title">车辆信息</view>
 				<view class="input_box">
 					<view class="input_box_view">
@@ -155,9 +157,9 @@
 				<button type="primary" @click="confirm"> 提交</button>
 			</view>
 		</view>
-		
-		<CarSpecs v-show="specsShow" @save='save'/>
-		<selectCarType v-show="typeShow" @determine='determine'/>
+
+		<CarSpecs v-show="specsShow" @save='save' />
+		<selectCarType v-show="typeShow" @determine='determine' />
 	</view>
 </template>
 
@@ -176,12 +178,12 @@
 		},
 		methods: {
 			//
-			save(){
-				this.specsShow=false
+			save() {
+				this.specsShow = false
 			},
 			//
-			determine(){
-				this.typeShow=false
+			determine() {
+				this.typeShow = false
 			},
 			// 提交按钮
 			confirm() {
@@ -191,15 +193,15 @@
 				// uni.navigateTo({
 				// 	url:'/subPackages/driver/selectCarType/selectCarType'
 				// })
-				this.typeShow=true
-				
+				this.typeShow = true
+
 			},
 			tocategory() {
 				// uni.navigateTo({
 				// 	url:'/subPackages/driver/CarSpecs/CarSpecs'
 				// })
-				this.specsShow=true
-				
+				this.specsShow = true
+
 			}
 		},
 		components: {
@@ -218,6 +220,16 @@
 </script>
 
 <style lang="scss" scoped>
+	.confirm_top_box {
+		width: 100%;
+		height: 60rpx;
+		text-align: center;
+		line-height: 60rpx;
+		background-color: #F8F0E6;
+		color: #FF9923;
+		font-size: 24rpx;
+	}
+
 	.change_box {
 		display: flex;
 		align-items: center;
@@ -287,11 +299,9 @@
 		.driver,
 		.vehicle {
 			width: 100%;
-			margin-top: 10upx;
 			background-color: #FFFFFF;
 			box-sizing: border-box;
 			padding-bottom: 30rpx;
-border-top: 20rpx solid #f6f6f6;
 			.title {
 				font-size: 34upx;
 				font-weight: 900;
@@ -308,7 +318,8 @@ border-top: 20rpx solid #f6f6f6;
 
 
 	}
-	page{
+
+	page {
 		background-color: #fff;
 	}
 </style>

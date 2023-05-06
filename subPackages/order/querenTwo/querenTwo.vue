@@ -52,7 +52,7 @@
 				<input type="text" placeholder="未产生费用不需要填写" class="two_box_input">
 				<view class="two_box_yuan">元</view>
 			</view>
-			<view class="xiaanniu" style="margin-top: 200rpx;">订单完成</view>
+			<view class="xiaanniu" style="margin-top: 200rpx;" @click="complete">订单完成</view>
 		</view>
 	</view>
 </template>
@@ -67,7 +67,11 @@
 		},
 		onLoad() {},
 		methods: {
-
+complete(){
+	uni.navigateTo({
+		url:'/subPackages/order/querenOrder/querenOrder'
+	})
+}
 
 		},
 		watch: {

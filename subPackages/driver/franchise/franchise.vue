@@ -33,6 +33,7 @@
 				</view>
 			</view>
 		</view>
+		<view class="" style="height: 110rpx;"></view>
 		<view class="btn">
 			<button type="primary" @click="confirm"> 确认信息</button>
 		</view>

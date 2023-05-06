@@ -19,7 +19,7 @@
 			<view class="unload_qian">95.5元</view>
 		</view>
 		<view class="" style="height: 600rpx;"></view>
-		<view class="xiaanniu">订单完成</view>
+		<view class="xiaanniu" @click="complete">订单完成</view>
 	</view>
 </template>
 
@@ -34,7 +34,11 @@
 		onLoad() {},
 		methods: {
 
-
+complete(){
+	uni.navigateTo({
+		url:'/subPackages/order/jiesu/jiesu'
+	})
+},
 		},
 		watch: {
 

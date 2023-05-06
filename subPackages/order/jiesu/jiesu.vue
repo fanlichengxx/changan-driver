@@ -18,7 +18,7 @@
 		<view class="jiesi_center_flex">
 			<view class="jiesubotton">结束工作</view>
 			<view class="" style="width: 80rpx;"></view>
-			<view class="jiesubotton jiesubotton_two">接续接单
+			<view class="jiesubotton jiesubotton_two" @click="continue1">接续接单
 			</view>
 		</view>
 	</view>
@@ -34,7 +34,11 @@
 		},
 		onLoad() {},
 		methods: {
-
+			continue1() {
+				uni.reLaunch({
+					url: '/pages/getOrder/getOrder?cont=1'
+				})
+			},
 
 		},
 		watch: {

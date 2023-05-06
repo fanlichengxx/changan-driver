@@ -53,7 +53,7 @@
 				</view>
 			</view>
 
-			<view class="order_time_box">
+			<view class="order_time_box" v-if="state==1 || state==3">
 				<view class="order_time_box_title">
 					<view>等待时长</view>
 					<smh-timer ref="timer" @timing="timing" :auto="true" style="margin-top: 30rpx;"></smh-timer>
@@ -73,23 +73,23 @@
 					</view>
 				</view>
 			</view>
-			<view style="height: 30rpx;"></view>
+			<view style="height: 200rpx;" v-else></view>
 
-			<view class="bottom_box">
+			<view class="bottom_box" style="margin-top: 20rpx;">
 				<view class="bottom_ren" style="background-color: #579AA3;" v-if="state>=2">
 					<image src="@/static/order/phone.png" mode="aspectFill">
 					</image>
 					<view class="">联系下单人</view>
 				</view>
-				<view class="bottom_ren" style="background-color: #579AA3;" v-if="state==0">
+				<view class="bottom_ren" style="background-color: #579AA3;" v-if="state==0 || state==1">
 					<image src="@/static/order/phone.png" mode="aspectFill">
 					</image>
 					<view class="">联系下单人</view>
 				</view>
-				<view class="bottom_ren" :style="state==1 ? 'width: 710rpx;':'width: 450rpx'">
-					<view  @click="golocation(state)" class="" style="margin-right: 20rpx;">{{['前往发货地','前往发货地','完成装货','到达目的地','完成卸货'][state]}}
+				<view class="bottom_ren" style="width: 450rpx">
+					<view  @click="golocation(state)" class="" style="margin-right: 20rpx;">{{['前往发货地','完成装货','前往目的地','完成卸货'][state]}}
 					</view>
-					<image v-if="state==1 || state==0" src="@/static/order/youjian.png" mode="aspectFill"></image>
+					<image v-if="state==2 || state==0" src="@/static/order/youjian.png" mode="aspectFill"></image>
 				</view>
 			</view>
 		</view>
@@ -102,7 +102,7 @@
 		data() {
 			return {
 				timestamp: 86400,
-				state: 4,
+				state: 0,
 				time: '03月22日 12:31',
 				data: {
 					name: '重庆长安明生物流公司',
@@ -118,12 +118,16 @@
 		methods: {
 			//按钮功能
 			golocation(e){
-				if(e==0||e==1){
+				if(e==0||e==2){
 					uni.navigateTo({
 						url:'/subPackages/map/OrderNavigation/OrderNavigation'
 					})
 				}
-				
+				if(e==3){
+					uni.navigateTo({
+						url:'/subPackages/order/querenTwo/querenTwo'
+					})
+				}
 			},
 			//上传图片
 			uplod(){

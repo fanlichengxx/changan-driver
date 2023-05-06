@@ -5,7 +5,7 @@
 			rightColor="#FFF" :fanhui="false" rightIcon="全部已读" @rightClick="rightClick" />
 		<view class="cell">
 			<u-cell-group>
-				<u-cell icon='../../static/tabBar/fuw1.png' title="服务通知"
+				<u-cell :icon="require('../../static/tabBar/fuw1.png')" title="服务通知"
 					:titleStyle="{color:'#202020',fontSize:'32rpx',marginTop:'20rpx',fontWeight:'bold',fontFamily: 'PingFang-SC-Bold'}"
 					:iconStyle="{marginTop:'20rpx',width:'60rpx',height:'60rpx',marginRight:'30rpx'}"
 					:rightIconStyle="{marginTop:'20rpx'}" class="cell_item" size='large' :border='false' label='订单退款成功'
@@ -13,7 +13,7 @@
 				</u-cell>
 				<!-- 分割线 -->
 				<view class="divider"></view>
-				<u-cell icon='../../static/tabBar/youhui1.png' title="优惠活动"
+				<u-cell :icon="require('../../static/tabBar/youhui1.png')" title="优惠活动"
 					:titleStyle="{color:'#202020',fontSize:'32rpx',marginTop:'20rpx',fontWeight:'bold',fontFamily: 'PingFang-SC-Bold'}"
 					:iconStyle="{marginTop:'20rpx',width:'60rpx',height:'60rpx',marginRight:'30rpx'}"
 					:rightIconStyle="{marginTop:'20rpx'}" class="cell_item" size='large' :border='false' label='暂无消息'
@@ -21,7 +21,7 @@
 				</u-cell>
 				<!-- 分割线 -->
 				<view class="divider"></view>
-				<u-cell icon='../../static/tabBar/kefu1.png' title="在线客服"
+				<u-cell :icon="require('../../static/tabBar/kefu1.png')" title="在线客服"
 					:titleStyle="{color:'#202020',fontSize:'32rpx',marginTop:'20rpx',fontWeight:'bold',fontFamily: 'PingFang-SC-Bold'}"
 					:iconStyle="{marginTop:'20rpx',width:'60rpx',height:'60rpx',marginRight:'30rpx'}"
 					:rightIconStyle="{marginTop:'20rpx'}" class="cell_item" size='large' :border='false' label='暂无消息'
