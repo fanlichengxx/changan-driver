@@ -56,6 +56,14 @@
                 "enablePullDownRefresh": false
             }
             
+        },{
+            "path" : "pages/my/MyOrder/MyOrder",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的订单",
+                "enablePullDownRefresh": false
+            }
+            
         }
        
     ],
@@ -137,6 +145,14 @@
                     "enablePullDownRefresh": false
                 }
                 
+                } ,{
+                    "path" : "MyOrderDetails/MyOrderDetails",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
                 }
             ]
 	},
@@ -169,6 +185,12 @@
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
+		},	{
+			"path": "legalProvisions/legalProvisions",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
 		}
 		]
 	},
@@ -183,6 +205,18 @@
 		},
 		{
 			"path": "OrderNavigation/OrderNavigation",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "OrderHeatMap/OrderHeatMap",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},{
+			"path": "AddRoute/AddRoute",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false

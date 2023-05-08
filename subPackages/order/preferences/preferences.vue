@@ -115,7 +115,7 @@
 					</view>
 				</view>
 				<view class="preference_add">
-					<view class="preference_add_flx">
+					<view class="preference_add_flx" @click="toRoute">
 						<image src="@/static/order/jia.png" mode="aspectFill"></image>
 						<view>添加路线</view>
 					</view>
@@ -209,6 +209,12 @@
 			}
 		},
 		methods: {
+			//常去地点设置
+			toRoute(){
+				uni.navigateTo({
+					url:'/subPackages/map/AddRoute/AddRoute'
+				})
+			},
 			//跳转地址列表
 			toAdd(){
 				uni.navigateTo({

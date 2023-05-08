@@ -15,7 +15,7 @@
 				</view>
 				<view class="contain_right">
 					<view class="right right_one" @click="setPreferences">听单偏好</view>
-					<view class="right">热力图</view>
+					<view class="right" @click="HeatMap">热力图</view>
 				</view>
 			</view>
 		</view>
@@ -209,6 +209,12 @@
 			}
 		},
 		methods: {
+			//热力图
+			HeatMap(){
+				uni.navigateTo({
+					url:'/subPackages/map/OrderHeatMap/OrderHeatMap'
+				})
+			},
 			//立即接单
 			getOrder(){
 				uni.navigateTo({

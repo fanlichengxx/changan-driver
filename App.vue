@@ -14,7 +14,12 @@
 </script>
 
 <style lang="scss">
+	/* 注意要写在第一行，同时给style标签加入lang="scss"属性 */
 	@import "uview-ui/index.scss";
+	// 引入阿里字体图标文件
+	@import url("@/static/iconfont/iconfont.css");
+
+
 
 	// 设置整个项目的背景色
 	page {

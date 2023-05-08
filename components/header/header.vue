@@ -1,6 +1,7 @@
 <template>
-	<u-navbar :title="title" @leftClick="leftClick" @rightClick="rightClick" :autoBack="false" :bgColor="bgColor"
-		:titleStyle="{'font-weight': 600,'font-size':fontSize,'color':color,'font-family': 'PingFang SC-Bold'}">
+	<u-navbar :placeholder="PreventCollapse" :title="title" @leftClick="leftClick" @rightClick="rightClick"
+		:autoBack="false" :bgColor="bgColor"
+		:titleStyle="{'font-weight':fontWeight,'font-size':fontSize,'color':color,'font-family': 'PingFang SC-Bold'}">
 		<view class="u-nav-slot" slot="left">
 			<u-icon :name="name" :size="size" :bold="true" :color="color" v-if="name"></u-icon>
 		</view>
@@ -14,6 +15,11 @@
 <script>
 	export default {
 		props: {
+			//，是否生成一个等高元素，以防止塌陷
+			PreventCollapse: {
+				typeof: Boolean,
+				default: false,
+			},
 			//中间文本
 			title: {
 				typeof: String,
@@ -24,7 +30,11 @@
 				typeof: String,
 				default: 18
 			},
-
+			//中间标题字体粗细
+			fontWeight: {
+				typeof: Number,
+				default: 600
+			},
 			//左侧图标
 			name: {
 				typeof: String,

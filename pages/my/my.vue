@@ -60,7 +60,7 @@
 				 class="cell_item"
 				 size='large'
 				 :border='false'
-				 isLink>
+				 isLink @click='management(2)'>
 				</u-cell>
 				<u-cell :icon="require('../../static/tabBar/falv.png')"  title="法律条款"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
@@ -69,7 +69,7 @@
 				 class="cell_item"
 				 size='large'
 				 :border='false'
-				 isLink>
+				 isLink @click='management(3)'>
 				</u-cell>
 				<u-cell :icon="require('../../static/tabBar/kefu.png')"  title="客服中心"
 				 :titleStyle="{color:'#666666',fontSize:'28upx',marginLeft:'20upx',marginTop:'20upx'}"
@@ -112,6 +112,12 @@ management(e){
 		break;
 		case 1:
 		url='/pages/my/fleetManage/fleetManage';
+		break;
+		case 2:
+		url='/pages/my/MyOrder/MyOrder';
+		break;
+		case 3:
+		url='/subPackages/my/legalProvisions/legalProvisions';
 		break;
 		case 5:
 		url='/pages/my/setMy/setMy';
